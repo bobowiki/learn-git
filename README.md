@@ -24,4 +24,16 @@
 
 - 创建分支
 
-`git branch newBranch`创建一个新的分支
+`git branch newBranch`创建一个新的分支，在新建的分支中进行 commit 提交
+
+注意：在 Git 2.23 版本中，引入了一个名为 `git switch` 的新命令，最终会取代 `git checkout`，因为 `checkout` 作为单个命令有点超载（它承载了很多独立的功能）。 由于现在很多人还无法使用 `switch`，本次课程仍然使用 `checkout` 而不是 `switch`
+
+也可以直接在当前分支执行`git checkout -b newBranch`这样能够快速创建一个 newBranch 的分支，同时切换到 newBranch 分支下面
+
+# 分支与合并
+
+> 太好了! 我们已经知道如何提交以及如何使用分支了。接下来咱们看看如何将两个分支合并到一起。就是说我们新建一个分支，在其上开发某个新功能，开发完成后再合并回主线。
+>
+> 咱们先来看一下第一种方法 —— `git merge`。在 Git 中合并两个分支时会产生一个特殊的提交记录，它有两个 parent 节点。翻译成自然语言相当于：“我要把这两个 parent 节点本身及它们所有的祖先都包含进来”
+
+例如我们需要将前面的 newBranch 分支合并到 master 分支，首先我们先要在 master 分支上执行`git merge newBranch`。
