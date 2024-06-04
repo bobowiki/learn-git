@@ -45,3 +45,9 @@
 > Rebase 的优势就是可以创造更线性的提交历史，这听上去有些难以理解。如果只允许使用 Rebase 的话，代码库的提交历史将会变得异常清晰。
 >
 > 咱们还是实际操作一下吧……
+
+例如我有一个 feat_rebase 分支，并且他的提交新于 master 分支，我们要将 rebase 上的分支内容合并到 master 上这个时候我们可以在 master 分支上执行`git rebase feat_rebase`
+
+rebase 翻译叫做变基，他的意思就是之前 master 以最近的一次提交为基点，变基就是把 feat_rebase 中的最近一次作为基点，本质也是和 merge 一样，将 master 的地址指向到了 feat_rebase 最近的一次提交。
+
+那他和 merge 有什么区别呢，他不会产生一次 merge 的合并 commit，同时它也能解决冲突，如果有冲突还能通过`git rebase --abort`放弃这次变基。在多人项目中还是不要去使用变基，有一个 merge 的 commit 提交记录将会更加清晰。
