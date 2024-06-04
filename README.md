@@ -24,4 +24,4 @@
 
 - 创建分支
 
-`git branch newBranch`创建一个新的分支
+`git branch newBranch`创建一个新的分支，在新建的分支中进行 commit 提交
