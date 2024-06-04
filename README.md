@@ -51,3 +51,13 @@
 rebase 翻译叫做变基，他的意思就是之前 master 以最近的一次提交为基点，变基就是把 feat_rebase 中的最近一次作为基点，本质也是和 merge 一样，将 master 的地址指向到了 feat_rebase 最近的一次提交。
 
 那他和 merge 有什么区别呢，他不会产生一次 merge 的合并 commit，同时它也能解决冲突，如果有冲突还能通过`git rebase --abort`放弃这次变基。在多人项目中还是不要去使用变基，有一个 merge 的 commit 提交记录将会更加清晰。
+
+# HEAD 头指针
+
+> 我们首先看一下 “HEAD”。 HEAD 是一个对当前所在分支的符号引用 —— 也就是指向你正在其基础上进行工作的提交记录。
+>
+> HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的。
+>
+> HEAD 通常情况下是指向分支名的（如 bugFix）。在你提交时，改变了 bugFix 的状态，这一变化通过 HEAD 变得可见。
+
+HEAD 默认指向你当前分支最近一次提交，当然我们也可以进行修改，`git checkout "commitId"`就能将 HEAD 指向另一次提交，这个时候就能查看这次 commitId 下的文件
