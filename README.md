@@ -169,3 +169,40 @@ d 0589cad g
 > 当 `ref` 提交记录上有某个标签时，则只输出标签名称
 
 ![](assets/20240605_201928_image.png)
+
+# git branch -f
+
+`git branch -f` 命令用于强制移动或更新分支指向的提交。它可以用于将分支移动到不同的提交或将分支重置到特定的提交。
+
+```json
+# 将分支 "feature" 移动到提交 "abc123"
+git branch -f feature abc123
+```
+
+请注意，强制移动分支可能会导致数据丢失，因此在使用此命令时要谨慎。确保你已经备份了你的仓库，或者在使用此命令时小心谨慎.
+
+# 多分支 rebase
+
+> 哇，现在我们这里出现了很多分支呢！让我们把所有这些分支上所做的工作都通过 rebase 合并到 main 分支上吧。
+>
+> 但是你的领导给你提了点要求 —— 他们希望得到有序的提交历史，也就是我们最终的结果应该是 C6' 在 C7' 上面， C5' 在 C6' 上面，依此类推。
+>
+> 即使你搞砸了也没关系，用 reset 命令就可以重新开始了。记得看看我们提供的答案，看你能否使用更少的命令来完成任务！
+
+![](assets/20240605_203640_image.png)
+
+`git checkout bugFix`
+
+`git rebase main`
+
+`git checkout side`
+
+`git rebase bugFix`
+
+`git checkout another`
+
+`git rebase side`
+
+`git branch -f main HEAD`
+
+快速的合并多个分支
