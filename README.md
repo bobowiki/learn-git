@@ -145,3 +145,9 @@ d 0589cad g
 # git commit --amend
 
 `git commit --amend`可以修改上一次的提交
+
+# git tag
+
+`git tag v0 commitId`可以直接对某一次的提交进行打 tag，该 tag 就是一个锚点，标志着这一次的提交被稳定下来
+
+`git checkout v0` 可以直接切换到该 tag 下
