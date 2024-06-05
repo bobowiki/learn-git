@@ -206,3 +206,7 @@ git branch -f feature abc123
 `git branch -f main HEAD`
 
 快速的合并多个分支
+
+# git branch
+
+git branch branchname 可以快速创建一个 branch
