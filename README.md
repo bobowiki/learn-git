@@ -141,3 +141,7 @@ d 3ce9ea3 add f
 d 0589cad g
 
 交互式变基可以非常好的去整理你的提交记录
+
+# git commit --amend
+
+`git commit --amend`可以修改上一次的提交
